@@ -31,9 +31,9 @@ img {
 
 .container {
   width: 100%;
-  max-width: 1040px;
+  max-width: 1300px; /* wider so it uses more of laptop screens */
   margin: 0 auto;
-  padding: 0 1.25rem;
+  padding: 0 2rem;
 }
 
 /* Header / nav */
@@ -90,6 +90,13 @@ img {
   border-color: rgba(59, 130, 246, 0.7);
 }
 
+/* Active nav link */
+.nav-links a.active-nav {
+  background: rgba(37, 99, 235, 0.35);
+  border-color: rgba(59, 130, 246, 0.9);
+  color: #f9fafb;
+}
+
 /* Sections */
 
 .section {
@@ -142,6 +149,7 @@ img {
 .accent {
   background: linear-gradient(135deg, #4f46e5, #22c55e);
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
 }
 
@@ -392,8 +400,148 @@ h2 {
   transition-delay: 0.40s;
 }
 
-/* Responsive */
+/* ====================== Engineering Ethics & Responsibility ====================== */
 
+.ethics-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  position: relative;
+}
+
+/* Soft glow behind the section */
+.ethics-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 60%;
+  max-width: 600px;
+  height: 60%;
+  background: radial-gradient(circle at top, rgba(96, 165, 250, 0.25), transparent 60%);
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.ethics-title {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa, #22c55e);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 1rem;
+}
+
+.ethics-subtitle {
+  text-align: center;
+  font-size: 1rem;
+  color: #9ca3af;
+  max-width: 520px;
+  margin: 0 auto 3rem;
+}
+
+/* PERFECT GRID for equal-sized boxes */
+.ethics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem; /* Even spacing around all boxes */
+}
+
+/* Card container */
+.ethics-card {
+  perspective: 1200px;
+  height: 420px; /* Equal height for all cards */
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+/* Flip inner wrapper */
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Front & Back faces */
+.flip-face {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 1.5rem;
+  padding: 2rem 1.6rem;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.85);
+  backface-visibility: hidden;
+}
+
+/* Front design */
+.flip-front {
+  background: radial-gradient(circle at top left, rgba(30, 64, 175, 0.35), rgba(15, 23, 42, 0.95));
+  display: flex;
+  flex-direction: column;
+}
+
+.flip-hint {
+  font-size: 0.78rem;
+  color: #9ca3af;
+  margin-top: auto;
+  padding-top: 1.2rem;
+}
+
+/* Back design */
+.flip-back {
+  background: radial-gradient(circle at top right, rgba(22, 163, 74, 0.25), rgba(15, 23, 42, 0.95));
+  transform: rotateY(180deg);
+  overflow-y: auto;          /* scroll inside if content too tall */
+  scrollbar-width: thin;
+  scrollbar-color: #475569 transparent;
+}
+
+/* Flip logic */
+.flip-card.flipped .flip-inner {
+  transform: rotateY(180deg);
+}
+
+/* Title & Text inside flip faces */
+.flip-face h3 {
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+  font-size: 1.25rem;
+  color: #f1f5f9;
+}
+
+.flip-face p {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #cbd5e1;
+}
+
+/* Card icon */
+.ethics-card-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, #4f46e5, #06b6d4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: white;
+  margin-bottom: 1.3rem;
+}
+
+/* Individual icons */
+.ethics-card:nth-child(1) .ethics-card-icon::after { content: "📚"; }
+.ethics-card:nth-child(2) .ethics-card-icon::after { content: "💡"; }
+.ethics-card:nth-child(3) .ethics-card-icon::after { content: "🎯"; }
+
+/* ----------- MOBILE FIX ----------- */
 @media (max-width: 900px) {
   .hero-grid {
     grid-template-columns: 1fr;
@@ -406,6 +554,14 @@ h2 {
 
   .two-col {
     grid-template-columns: 1fr;
+  }
+
+  .ethics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ethics-card {
+    height: 460px;
   }
 }
 
@@ -421,5 +577,9 @@ h2 {
 
   .section {
     padding: 3rem 0;
+  }
+
+  .container {
+    padding: 0 1.25rem;
   }
 }
