@@ -725,3 +725,177 @@ body.theme-light .flip-face p {
     padding: 0 1.25rem;
   }
 }
+/* ====================== PROJECTS SECTION ====================== */
+
+.section-projects {
+  background: radial-gradient(circle at top, rgba(88, 115, 255, 0.18), transparent 65%);
+}
+
+.projects-title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 1rem;
+}
+
+.projects-wrapper {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+/* Project Card */
+.project-card {
+  display: flex;
+  gap: 1.4rem;
+  padding: 1.6rem 1.8rem;
+  border-radius: 20px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(12px);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+body.theme-light .project-card {
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(96, 165, 250, 0.8);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* Icon container */
+.project-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Modern circular icon with glow + animation */
+.project-icon {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 20%, #ffffff, rgba(15, 23, 42, 0.9));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.7);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* subtle gradient ring */
+.project-icon::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from 180deg,
+    #4f46e5,
+    #06b6d4,
+    #22c55e,
+    #a855f7,
+    #4f46e5
+  );
+  opacity: 0.9;
+  z-index: -1;
+}
+
+/* inner mask for ring look */
+.project-icon::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: inherit;
+  background: radial-gradient(circle at 25% 15%, #f9fafb, #020617);
+}
+
+/* emoji / glyph */
+.project-icon-glyph {
+  position: relative;
+  font-size: 1.8rem;
+  z-index: 1;
+}
+
+/* Different starting rotations for variety */
+.project-icon-1 { transform: rotate(-4deg); }
+.project-icon-2 { transform: rotate(3deg); }
+.project-icon-3 { transform: rotate(-2deg); }
+.project-icon-4 { transform: rotate(5deg); }
+.project-icon-5 { transform: rotate(-3deg); }
+
+/* Hover animation */
+.project-card:hover .project-icon {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.85);
+}
+
+/* Project text */
+.project-text h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.25rem;
+  color: #f1f5f9;
+}
+
+body.theme-light .project-text h3 {
+  color: #111827;
+}
+
+.project-text p {
+  color: #d1d5db;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0 0 0.6rem;
+}
+
+body.theme-light .project-text p {
+  color: #374151;
+}
+
+/* "View details" link */
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #60a5fa;
+  text-decoration: none;
+  position: relative;
+}
+
+.project-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 1px;
+  background: linear-gradient(90deg, #60a5fa, #a78bfa);
+  transition: width 0.2s ease;
+}
+
+.project-link:hover::after {
+  width: 100%;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .project-card {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .project-icon-wrap {
+    justify-content: flex-start;
+  }
+}
