@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Autonomous Vehicle with Smart Mobility | Animesh</title>
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="theme-dark">
+  <section class="section">
+    <div class="container" style="max-width: 900px;">
+      <a href="index.html#projects" style="font-size:0.9rem; text-decoration:none; color:#60a5fa;">
+        ← Back to main portfolio
+      </a>
+
+      <h1 style="margin-top:1rem; font-size:2rem;">Autonomous Vehicle with Smart Mobility</h1>
+      <p class="section-sub">
+        An embedded-systems-based autonomous vehicle concept integrating Arduino, PCB design,
+        simulations, and mobile UI control.
+      </p>
+
+      <!-- Project image -->
+      <div style="margin:1.5rem 0;">
+        <!-- Replace with your actual prototype / PCB image -->
+        <img src="images/autonomous-vehicle.jpg"
+             alt="Autonomous vehicle and PCB design"
+             style="border-radius:16px; max-height:360px; object-fit:cover; width:100%;">
+      </div>
+
+      <h2>Overview</h2>
+      <p>
+        This project extended the idea of a controlled vehicle into a more autonomous system.
+        The goal was to design and simulate a platform that could make decisions with minimal
+        human intervention, while connecting hardware design, simulations, and a user-facing interface.
+      </p>
+
+      <h2>What I Did</h2>
+      <ul class="bullet-list">
+        <li>Designed and tested <strong>Arduino-based control logic</strong> for vehicle behaviour.</li>
+        <li>Worked on <strong>PCB design</strong> using Proteus to create a dual AC-DC power supply board.</li>
+        <li>Used <strong>TinkerCAD</strong> and related tools to simulate circuits and logic before implementation.</li>
+        <li>Contributed to <strong>mobile UI development</strong> allowing users to monitor or interact with the vehicle.</li>
+      </ul>
+
+      <h2>Tools & Technologies</h2>
+      <ul class="bullet-list">
+        <li>Arduino microcontroller and C/C++-style embedded programming.</li>
+        <li>PCB design with Proteus for power and control circuits.</li>
+        <li>Simulation environments (e.g., TinkerCAD) for early validation.</li>
+        <li>Basic mobile UI components for command/control and feedback.</li>
+      </ul>
+
+      <h2>Challenges & Learnings</h2>
+      <p>
+        One of the key challenges was ensuring the designed PCB met both
+        <strong>power requirements and safety margins</strong> while being compact and robust.
+        This project improved my understanding of hardware-software co-design, and showed how important
+        simulation is in catching issues before fabrication. It also gave me confidence to work at the
+        intersection of electronics, code, and user experience.
+      </p>
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      const theme = localStorage.getItem('theme') || 'dark';
+      document.body.classList.remove('theme-dark', 'theme-light');
+      document.body.classList.add(theme === 'light' ? 'theme-light' : 'theme-dark');
+    })();
+  </script>
+</body>
+</html>

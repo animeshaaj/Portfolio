@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sovereign Vehicle with Smart Transportability | Animesh</title>
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="theme-dark">
+  <section class="section">
+    <div class="container" style="max-width: 900px;">
+      <a href="index.html#projects" style="font-size:0.9rem; text-decoration:none; color:#60a5fa;">
+        ← Back to main portfolio
+      </a>
+
+      <h1 style="margin-top:1rem; font-size:2rem;">Sovereign Vehicle with Smart Transportability</h1>
+      <p class="section-sub">
+        A Bluetooth-controlled smart vehicle featuring obstacle detection, GPS tracking, and
+        tight hardware–software integration.
+      </p>
+
+      <!-- Project image -->
+      <div style="margin:1.5rem 0;">
+        <!-- Replace with your actual photo / prototype image -->
+        <img src="images/sovereign-vehicle.jpg"
+             alt="Sovereign vehicle project prototype"
+             style="border-radius:16px; max-height:360px; object-fit:cover; width:100%;">
+      </div>
+
+      <h2>Overview</h2>
+      <p>
+        This project focused on building a small-scale vehicle platform that could be controlled
+        wirelessly and respond intelligently to its environment. The aim was to simulate features of
+        modern smart mobility systems in a compact prototype—combining sensing, actuation, and communication.
+      </p>
+
+      <h2>My Role & Responsibilities</h2>
+      <ul class="bullet-list">
+        <li>Implemented <strong>Bluetooth-based control</strong> to steer and operate the vehicle remotely.</li>
+        <li>Integrated <strong>obstacle detection sensors</strong> to prevent collisions and allow safer navigation.</li>
+        <li>Added <strong>GPS tracking</strong> to monitor the vehicle’s position and path in real time.</li>
+        <li>Coordinated hardware–software integration between microcontroller, sensors, drivers, and the control interface.</li>
+      </ul>
+
+      <h2>Tech Stack & Hardware</h2>
+      <ul class="bullet-list">
+        <li>Microcontroller platform (e.g., Arduino-style board).</li>
+        <li>Bluetooth module for wireless communication.</li>
+        <li>Ultrasonic / IR sensors for obstacle detection.</li>
+        <li>GPS module for position tracking.</li>
+        <li>Motor drivers, chassis, power supply, and basic mechanical assembly.</li>
+      </ul>
+
+      <h2>Key Learnings</h2>
+      <p>
+        This project taught me how challenging and rewarding <strong>real-time integration</strong> can be.
+        Issues like noisy sensor data, latency, and power stability had to be addressed systematically.
+        It strengthened my skills in embedded programming, debugging, and designing systems that
+        combine software logic with physical hardware behaviour.
+      </p>
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      const theme = localStorage.getItem('theme') || 'dark';
+      document.body.classList.remove('theme-dark', 'theme-light');
+      document.body.classList.add(theme === 'light' ? 'theme-light' : 'theme-dark');
+    })();
+  </script>
+</body>
+</html>
