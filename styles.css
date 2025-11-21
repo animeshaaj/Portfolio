@@ -4,17 +4,49 @@
   box-sizing: border-box;
 }
 
+/* Smooth theme transitions */
+body,
+.site-header,
+.section,
+.card,
+.about-card,
+.hero-image-card,
+.ethics-section,
+.site-footer,
+.timeline,
+.flip-face {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Base body styles for both themes */
+
 body {
   margin: 0;
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background-color: #050816;
-  color: #e5e7eb;
   line-height: 1.6;
   scroll-behavior: smooth;
 }
 
+/* Dark theme (default) */
+
+body.theme-dark {
+  background-color: #050816;
+  color: #e5e7eb;
+}
+
+/* Light theme */
+
+body.theme-light {
+  background-color: #f9fafb;
+  color: #111827;
+}
+
 a {
-  color: #60a5fa;
+  color: #2563eb;
   text-decoration: none;
 }
 
@@ -31,7 +63,7 @@ img {
 
 .container {
   width: 100%;
-  max-width: 1300px; /* wider so it uses more of laptop screens */
+  max-width: 1300px;
   margin: 0 auto;
   padding: 0 2rem;
 }
@@ -45,6 +77,11 @@ img {
   background: rgba(5, 8, 22, 0.92);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+body.theme-light .site-header {
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .nav-inner {
@@ -63,6 +100,10 @@ img {
   color: #f9fafb;
 }
 
+body.theme-light .logo {
+  color: #111827;
+}
+
 .logo-dot {
   width: 10px;
   height: 10px;
@@ -74,6 +115,7 @@ img {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .nav-links a {
@@ -83,6 +125,10 @@ img {
   border-radius: 999px;
   border: 1px solid transparent;
   transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+body.theme-light .nav-links a {
+  color: #111827;
 }
 
 .nav-links a:hover {
@@ -97,6 +143,56 @@ img {
   color: #f9fafb;
 }
 
+/* Theme toggle button (modern pill) */
+
+.theme-toggle {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.toggle-track {
+  width: 54px;
+  height: 26px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.9);
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6px;
+  position: relative;
+  box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.6);
+}
+
+body.theme-light .toggle-track {
+  background: #e5e7eb;
+  box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.8);
+}
+
+.toggle-icon {
+  font-size: 0.85rem;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.toggle-thumb {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  background: #f9fafb;
+  left: 3px;
+  top: 3px;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.5);
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+body.theme-light .toggle-thumb {
+  transform: translateX(24px);
+  background: #ffffff;
+}
+
 /* Sections */
 
 .section {
@@ -105,6 +201,10 @@ img {
 
 .section-alt {
   background: radial-gradient(circle at top, rgba(37, 99, 235, 0.18), transparent 60%);
+}
+
+body.theme-light .section-alt {
+  background: radial-gradient(circle at top, rgba(191, 219, 254, 0.7), transparent 60%);
 }
 
 /* Hero */
@@ -132,6 +232,10 @@ img {
   margin: 0.15rem 0 0.75rem;
 }
 
+body.theme-light .hero-text h2 {
+  color: #374151;
+}
+
 .hero-eyebrow {
   font-size: 0.85rem;
   letter-spacing: 0.08em;
@@ -144,6 +248,10 @@ img {
   font-size: 0.98rem;
   color: #d1d5db;
   max-width: 32rem;
+}
+
+body.theme-light .hero-sub {
+  color: #4b5563;
 }
 
 .accent {
@@ -186,7 +294,7 @@ img {
 .btn.ghost {
   background: transparent;
   border-color: rgba(148, 163, 184, 0.7);
-  color: #e5e7eb;
+  color: inherit;
 }
 
 .btn.ghost:hover {
@@ -207,6 +315,10 @@ img {
   align-items: center;
 }
 
+body.theme-light .hero-image-card {
+  box-shadow: 0 16px 35px rgba(15, 23, 42, 0.25);
+}
+
 .hero-image-card img {
   width: 220px;
   height: 220px;
@@ -225,6 +337,10 @@ img {
   gap: 0.15rem;
 }
 
+body.theme-light .hero-tag {
+  color: #374151;
+}
+
 /* Generic content */
 
 h2 {
@@ -236,6 +352,10 @@ h2 {
   font-size: 0.95rem;
   color: #9ca3af;
   max-width: 32rem;
+}
+
+body.theme-light .section-sub {
+  color: #6b7280;
 }
 
 /* Two-column layout for About */
@@ -256,6 +376,12 @@ h2 {
   font-size: 0.9rem;
 }
 
+body.theme-light .about-card {
+  background: #ffffff;
+  border-color: #e5e7eb;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+}
+
 .about-card ul {
   list-style: none;
   padding: 0;
@@ -270,6 +396,10 @@ h2 {
   color: #9ca3af;
   display: inline-block;
   min-width: 80px;
+}
+
+body.theme-light .about-card li span {
+  color: #6b7280;
 }
 
 /* Lists */
@@ -299,6 +429,12 @@ h2 {
   box-shadow: 0 12px 30px rgba(15, 23, 42, 0.7);
 }
 
+body.theme-light .card {
+  background: #ffffff;
+  border-color: #e5e7eb;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
+}
+
 .card h3 {
   margin-top: 0;
   margin-bottom: 0.45rem;
@@ -311,12 +447,20 @@ h2 {
   color: #d1d5db;
 }
 
+body.theme-light .card p {
+  color: #4b5563;
+}
+
 /* Timeline */
 
 .timeline {
   margin-top: 1.5rem;
   border-left: 2px solid rgba(148, 163, 184, 0.6);
   padding-left: 1.2rem;
+}
+
+body.theme-light .timeline {
+  border-left-color: #d1d5db;
 }
 
 .timeline-item {
@@ -332,6 +476,10 @@ h2 {
   color: #9ca3af;
 }
 
+body.theme-light .timeline-year {
+  color: #6b7280;
+}
+
 .timeline-content {
   padding-left: 0.3rem;
 }
@@ -345,6 +493,10 @@ h2 {
   margin: 0;
   font-size: 0.9rem;
   color: #d1d5db;
+}
+
+body.theme-light .timeline-content p {
+  color: #4b5563;
 }
 
 /* Life cards tweak */
@@ -370,34 +522,10 @@ h2 {
   text-align: center;
 }
 
-/* Scroll reveal animation */
-
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Slight stagger inside card grids */
-.cards-grid .reveal:nth-child(2) {
-  transition-delay: 0.08s;
-}
-.cards-grid .reveal:nth-child(3) {
-  transition-delay: 0.16s;
-}
-.cards-grid .reveal:nth-child(4) {
-  transition-delay: 0.24s;
-}
-.cards-grid .reveal:nth-child(5) {
-  transition-delay: 0.32s;
-}
-.cards-grid .reveal:nth-child(6) {
-  transition-delay: 0.40s;
+body.theme-light .site-footer {
+  background: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+  color: #6b7280;
 }
 
 /* ====================== Engineering Ethics & Responsibility ====================== */
@@ -443,17 +571,21 @@ h2 {
   margin: 0 auto 3rem;
 }
 
+body.theme-light .ethics-subtitle {
+  color: #6b7280;
+}
+
 /* PERFECT GRID for equal-sized boxes */
 .ethics-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem; /* Even spacing around all boxes */
+  gap: 2rem;
 }
 
 /* Card container */
 .ethics-card {
   perspective: 1200px;
-  height: 420px; /* Equal height for all cards */
+  height: 420px;
   border-radius: 1.5rem;
   overflow: hidden;
 }
@@ -487,20 +619,22 @@ h2 {
   flex-direction: column;
 }
 
-.flip-hint {
-  font-size: 0.78rem;
-  color: #9ca3af;
-  margin-top: auto;
-  padding-top: 1.2rem;
+body.theme-light .flip-front {
+  background: radial-gradient(circle at top left, rgba(191, 219, 254, 0.9), #ffffff);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
 }
 
 /* Back design */
 .flip-back {
   background: radial-gradient(circle at top right, rgba(22, 163, 74, 0.25), rgba(15, 23, 42, 0.95));
   transform: rotateY(180deg);
-  overflow-y: auto;          /* scroll inside if content too tall */
+  overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: #475569 transparent;
+}
+
+body.theme-light .flip-back {
+  background: radial-gradient(circle at top right, rgba(187, 247, 208, 0.9), #ffffff);
 }
 
 /* Flip logic */
@@ -516,10 +650,18 @@ h2 {
   color: #f1f5f9;
 }
 
+body.theme-light .flip-face h3 {
+  color: #111827;
+}
+
 .flip-face p {
   font-size: 0.95rem;
   line-height: 1.55;
   color: #cbd5e1;
+}
+
+body.theme-light .flip-face p {
+  color: #4b5563;
 }
 
 /* Card icon */
@@ -541,7 +683,7 @@ h2 {
 .ethics-card:nth-child(2) .ethics-card-icon::after { content: "💡"; }
 .ethics-card:nth-child(3) .ethics-card-icon::after { content: "🎯"; }
 
-/* ----------- MOBILE FIX ----------- */
+/* ----------- RESPONSIVE ----------- */
 @media (max-width: 900px) {
   .hero-grid {
     grid-template-columns: 1fr;
