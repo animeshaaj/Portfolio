@@ -4,12 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Animesh – ENGG 687 Portfolio</title>
+
+  <!-- Main CSS -->
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- AOS (Animate On Scroll) CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
 </head>
-<body>
+<body class="theme-dark">
   <!-- HEADER / NAV -->
   <header class="site-header">
     <div class="container nav-inner">
@@ -26,6 +33,15 @@
         <a href="#achievements">Achievements</a>
         <a href="#life">My Life</a>
         <a href="#contact">Contact</a>
+
+        <!-- Dark / Light toggle (modern pill icon) -->
+        <button class="theme-toggle" type="button" aria-label="Toggle dark or light mode">
+          <span class="toggle-track">
+            <span class="toggle-icon toggle-icon-sun">☀</span>
+            <span class="toggle-icon toggle-icon-moon">☾</span>
+            <span class="toggle-thumb"></span>
+          </span>
+        </button>
       </nav>
     </div>
   </header>
@@ -33,9 +49,9 @@
   <!-- HERO / HOME -->
   <section id="home" class="section hero">
     <div class="container hero-grid">
-      <div class="hero-text reveal">
+      <div class="hero-text" data-aos="fade-right">
         <p class="hero-eyebrow">ENGG 687 · Fall 2025</p>
-        <h1>I'm <span class="accent">Animesh Jamgade</span></h1>
+        <h1>I'm <span class="accent">Animesh</span></h1>
         <h2>MEng in Electrical &amp; Computer Engineering</h2>
         <p class="hero-sub">
           This website is my personal portfolio for ENGG 687. It showcases what I
@@ -49,7 +65,7 @@
         </div>
       </div>
 
-      <div class="hero-image-card reveal">
+      <div class="hero-image-card" data-aos="fade-left">
         <!-- Replace me.jpg with your actual photo filename -->
         <img src="me.jpg" alt="Portrait of Animesh" />
         <div class="hero-tag">
@@ -63,7 +79,7 @@
   <!-- ABOUT -->
   <section id="about" class="section">
     <div class="container two-col">
-      <div class="reveal">
+      <div data-aos="fade-up">
         <h2>About Me</h2>
         <p>
           Hii, I am a MEng student specializing in Electrical and Computer Engg at the University of Calgary.
@@ -83,7 +99,7 @@
         </ul>
       </div>
 
-      <div class="about-card reveal">
+      <div class="about-card" data-aos="fade-up" data-aos-delay="120">
         <h3>Quick Snapshot</h3>
         <ul>
           <li><span>Program:</span> MEng, Electrical &amp; Computer Engineering</li>
@@ -98,7 +114,7 @@
 
   <!-- ENGINEERING ETHICS & RESPONSIBILITY -->
   <section id="ethics-responsibility" class="section">
-    <div class="ethics-section reveal">
+    <div class="ethics-section" data-aos="fade-up">
       <h2 class="ethics-title">Engineering Ethics and Responsibility</h2>
       <p class="ethics-subtitle">
         A focused reflection on how ENGG 687 reshaped my understanding of what it really means
@@ -107,7 +123,7 @@
 
       <div class="ethics-grid">
         <!-- Card 1: What I Learned -->
-        <div class="ethics-card flip-card">
+        <div class="ethics-card flip-card" data-aos="flip-left">
           <div class="flip-inner">
             <!-- Front -->
             <div class="flip-face flip-front">
@@ -131,7 +147,7 @@
         </div>
 
         <!-- Card 2: My Biggest Takeaway -->
-        <div class="ethics-card flip-card">
+        <div class="ethics-card flip-card" data-aos="flip-up" data-aos-delay="100">
           <div class="flip-inner">
             <!-- Front -->
             <div class="flip-face flip-front">
@@ -155,7 +171,7 @@
         </div>
 
         <!-- Card 3: How I Will Integrate This -->
-        <div class="ethics-card flip-card">
+        <div class="ethics-card flip-card" data-aos="flip-right" data-aos-delay="200">
           <div class="flip-inner">
             <!-- Front -->
             <div class="flip-face flip-front">
@@ -185,13 +201,13 @@
   <!-- ENGG 687 PORTFOLIO -->
   <section id="engg687" class="section section-alt">
     <div class="container">
-      <h2 class="reveal">ENGG 687 Portfolio</h2>
-      <p class="section-sub reveal">
+      <h2 data-aos="fade-up">ENGG 687 Portfolio</h2>
+      <p class="section-sub" data-aos="fade-up" data-aos-delay="100">
         Key reflections and learnings from ENGG 687 – Ethics, Law, and the Engineering Profession.
       </p>
 
       <div class="cards-grid">
-        <article class="card reveal">
+        <article class="card" data-aos="fade-up">
           <h3>Engineering Ethics &amp; Responsibility</h3>
           <p>
             Ethical engineering is more than following rules; it means protecting people, society,
@@ -200,7 +216,7 @@
           </p>
         </article>
 
-        <article class="card reveal">
+        <article class="card" data-aos="fade-up" data-aos-delay="80">
           <h3>Course Learnings</h3>
           <p>
             Case studies like Challenger and Walkerton showed how system-level issues, communication gaps,
@@ -209,7 +225,7 @@
           </p>
         </article>
 
-        <article class="card reveal">
+        <article class="card" data-aos="fade-up" data-aos-delay="160">
           <h3>Reading Reflections</h3>
           <p>
             Readings on moral courage and unintended consequences helped me reflect on when to speak up,
@@ -217,7 +233,7 @@
           </p>
         </article>
 
-        <article class="card reveal">
+        <article class="card" data-aos="fade-up" data-aos-delay="240">
           <h3>Suggested Materials</h3>
           <p>
             Additional resources on professional responsibility and sustainability reinforced that
@@ -225,7 +241,7 @@
           </p>
         </article>
 
-        <article class="card reveal">
+        <article class="card" data-aos="fade-up" data-aos-delay="320">
           <h3>Teamwork Reflection</h3>
           <p>
             Our project experience showed that clear roles, communication, and listening to each other
@@ -233,7 +249,7 @@
           </p>
         </article>
 
-        <article class="card reveal">
+        <article class="card" data-aos="fade-up" data-aos-delay="400">
           <h3>Looking Back &amp; My Choice</h3>
           <p>
             Early in the course, ethics felt overwhelming. Now I see it as a skill I can grow. I chose
@@ -247,13 +263,13 @@
   <!-- ACHIEVEMENTS / TIMELINE -->
   <section id="achievements" class="section">
     <div class="container">
-      <h2 class="reveal">Achievements &amp; Milestones</h2>
-      <p class="section-sub reveal">
+      <h2 data-aos="fade-up">Achievements &amp; Milestones</h2>
+      <p class="section-sub" data-aos="fade-up" data-aos-delay="100">
         A brief timeline of experiences that shaped me as an engineer and a person.
       </p>
 
       <div class="timeline">
-        <div class="timeline-item reveal">
+        <div class="timeline-item" data-aos="fade-up">
           <div class="timeline-year">2025</div>
           <div class="timeline-content">
             <h3>MEng at UCalgary</h3>
@@ -264,7 +280,7 @@
           </div>
         </div>
 
-        <div class="timeline-item reveal">
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="120">
           <div class="timeline-year">2022</div>
           <div class="timeline-content">
             <h3>React.js Developer Intern</h3>
@@ -275,7 +291,7 @@
           </div>
         </div>
 
-        <div class="timeline-item reveal">
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="240">
           <div class="timeline-year">Earlier</div>
           <div class="timeline-content">
             <h3>Electronics &amp; Telecommunication</h3>
@@ -292,13 +308,13 @@
   <!-- MY LIFE & JOURNEY -->
   <section id="life" class="section section-alt">
     <div class="container">
-      <h2 class="reveal">My Life &amp; Journey</h2>
-      <p class="section-sub reveal">
+      <h2 data-aos="fade-up">My Life &amp; Journey</h2>
+      <p class="section-sub" data-aos="fade-up" data-aos-delay="100">
         A little bit beyond assignments and labs – the moments that keep me motivated.
       </p>
 
       <div class="cards-grid life-grid">
-        <article class="card reveal">
+        <article class="card" data-aos="fade-up">
           <h3>My Story So Far</h3>
           <p>
             I’ve always been curious about how things work—from small circuits to complex systems.
@@ -306,7 +322,7 @@
           </p>
         </article>
 
-        <article class="card reveal">
+        <article class="card" data-aos="fade-up" data-aos-delay="80">
           <h3>Things I’m Proud Of</h3>
           <p>
             Balancing studies, an internship, leadership roles, and volunteering.
@@ -314,7 +330,7 @@
           </p>
         </article>
 
-        <article class="card reveal">
+        <article class="card" data-aos="fade-up" data-aos-delay="160">
           <h3>Life Outside the Lab</h3>
           <p>
             I like exploring new places in and around Calgary, spending time with friends,
@@ -322,7 +338,7 @@
           </p>
         </article>
 
-        <article class="card reveal">
+        <article class="card" data-aos="fade-up" data-aos-delay="240">
           <h3>Looking Ahead</h3>
           <p>
             I want to work on sustainable, impactful technologies that make life easier and cleaner
@@ -335,11 +351,10 @@
 
   <!-- CONTACT / FOOTER SECTION -->
   <section id="contact" class="section">
-    <div class="container contact reveal">
+    <div class="container contact" data-aos="fade-up">
       <h2>Contact</h2>
       <p>If you’d like to connect with me about engineering, projects, or ideas, feel free to reach out.</p>
-      <p><strong>Email:</strong> animesh.jamgade@ucalgary.ca</p>
-            <p><strong>Phone no.:</strong> 587-894 (9164)</p>
+      <p><strong>Email:</strong> your.email@ucalgary.ca</p>
     </div>
   </section>
 
@@ -349,9 +364,41 @@
     </div>
   </footer>
 
-  <!-- Smooth scrolling + scroll reveal + flip cards + active nav -->
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <!-- Smooth scrolling + active nav + flip cards + theme toggle + AOS init -->
   <script>
     (function () {
+      // =============== Theme Toggle (Dark / Light) ===============
+      const body = document.body;
+      const toggleBtn = document.querySelector('.theme-toggle');
+
+      function applyTheme(theme) {
+        if (theme === 'light') {
+          body.classList.remove('theme-dark');
+          body.classList.add('theme-light');
+        } else {
+          body.classList.remove('theme-light');
+          body.classList.add('theme-dark');
+        }
+      }
+
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        applyTheme(savedTheme);
+      } else {
+        applyTheme('dark');
+      }
+
+      if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+          const newTheme = body.classList.contains('theme-dark') ? 'light' : 'dark';
+          applyTheme(newTheme);
+          localStorage.setItem('theme', newTheme);
+        });
+      }
+
       // =============== Smooth scrolling for navbar links ===============
       const headerOffset = 70;
       const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
@@ -374,25 +421,6 @@
           });
         });
       });
-
-      // ================= Scroll reveal using IntersectionObserver =================
-      const revealElements = document.querySelectorAll('.reveal');
-
-      const revealObserver = new IntersectionObserver(
-        entries => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
-              revealObserver.unobserve(entry.target);
-            }
-          });
-        },
-        {
-          threshold: 0.15
-        }
-      );
-
-      revealElements.forEach(el => revealObserver.observe(el));
 
       // ================= Highlight active nav item on scroll =================
       const sections = document.querySelectorAll('section[id]');
@@ -433,6 +461,14 @@
         card.addEventListener('click', () => {
           card.classList.toggle('flipped');
         });
+      });
+
+      // ================= AOS Init =================
+      AOS.init({
+        duration: 700,
+        easing: 'ease-out-quart',
+        once: true,
+        offset: 80
       });
     })();
   </script>
